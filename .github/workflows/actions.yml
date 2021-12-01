@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: List files
         run: | 
+          whoami
           pwd
           ls -a
           echo $GITHUB_SHA
