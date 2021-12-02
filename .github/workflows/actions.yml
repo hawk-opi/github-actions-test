@@ -1,5 +1,9 @@
 name : Actions workflow
 on:
+  push: 
+    branches:
+      - master
+      - 'feature/*'
   repository_dispatch:
     types: [build]
   pull_request:
