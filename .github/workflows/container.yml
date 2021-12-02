@@ -20,6 +20,11 @@ jobs:
         with: #overrides entrypoint
           entrypoint: /bin/echo
           args: Hello World
+      - name: Test Slack notification
+        uses: docker://technosophos/slack-notify
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: "Hello, me."
       - name: Log node version
         uses: docker://node:16-alpine3.12
         with: #overrides entrypoint
