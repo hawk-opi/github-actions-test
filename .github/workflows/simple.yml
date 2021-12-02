@@ -1,4 +1,4 @@
-name: Shell Commands
+name: Shell Commands Test
 on: [pull_request]
 jobs:
   run-shell-command:
