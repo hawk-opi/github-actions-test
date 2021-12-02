@@ -9,6 +9,11 @@ jobs:
     steps:
       - name: log node version
         run: node -v
+      - name: Run script
+        uses: docker://node:16-alpine3.12
+        with:
+            entrypoint: ./script.sh
+            args: "Some string"
       - name: Step with docker
         uses: docker://node:16-alpine3.12
         with: #overrides entrypoint
