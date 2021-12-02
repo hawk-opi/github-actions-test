@@ -12,7 +12,7 @@ jobs:
       - name: Step with docker
         uses: docker://node:16-alpine3.12
         with: #overrides entrypoint
-          entrypoint: bin/echo s
+          entrypoint: /bin/echo s
           args: Hello World
       - name: Log node version
         uses: docker://node:16-alpine3.12
