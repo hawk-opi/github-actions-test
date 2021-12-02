@@ -2,6 +2,23 @@ name: Container
 on: push
 
 jobs:
+  docker-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:17-buster
+    steps:
+      - name: log node version
+        run: node -v
+      - name: Step with docker
+        uses: docker://node:16-alpine3.12
+        with: #overrides entrypoint
+          entrypoint: bin/echo s
+          args: Hello World
+      - name: Log node version
+        uses: docker://node:16-alpine3.12
+        with: #overrides entrypoint
+          entrypoint: /usr/local/bin/node
+          args: -v
   node-docker:
     runs-on: ubuntu-latest
     services:
